@@ -1,0 +1,7 @@
+version: '2.4'
+
+services:
+  main_build:
+    build: .
+    volumes:
+      - ./deploy:/deploy

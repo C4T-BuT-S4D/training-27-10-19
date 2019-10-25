@@ -1,0 +1,7 @@
+version: '2.4'
+
+services:
+  chocowrappers:
+    build: .
+    ports: 
+      - "8001:5000"
