@@ -25,7 +25,7 @@ def hchecksum(text):
     return h
 
 def validate(text):
-    return re.match("[A-Za-z0-9]*", text) != None
+    return re.match("^[A-Za-z0-9]+$", text) != None
 
 def parse_cookies(r):
     c = r.Cookies

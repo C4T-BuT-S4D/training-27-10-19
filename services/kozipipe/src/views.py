@@ -1,10 +1,9 @@
 from helpers import write_response, parse_cookies, get_body, set_cookies, validate, chk_owner
 from controllers import find_user, create_user, create_kozinak, find_kozinak, create_kozinak_chk
 from session import get_session_manager
-from os import listdir
-from os.path import isfile, join
 from urllib import urlopen
 import json
+import os
 
 def get_json_or_error(r, w):
     body = get_body(r)
@@ -37,7 +36,7 @@ def register(r, w, params):
         write_response(w, '{"error": "user already exists"}')
         return
 
-    if not validate(username) or not validate(password):
+    if not validate(username):
         write_response(w, '{"error": "invalid username or password"}')
         return
 
@@ -65,7 +64,7 @@ def login(r, w, params):
         return
 
     if u.password != password:
-        write_response(w, '{"error": "incorrect password"')
+        write_response(w, '{"error": "incorrect password"}')
         return
 
     mng = get_session_manager()
@@ -75,7 +74,11 @@ def login(r, w, params):
     write_response(w, '{"result": "ok"}')
 
 def list_kozinaks(r, w, params):
-    kozi = [f for f in listdir("/db/kozi") if isfile(join("/db/kozi", f))]
+    os.chdir("/db/kozi")
+    kozi = filter(os.path.isfile, os.listdir("/db/kozi"))
+    kozi = [os.path.join("/db/kozi", f) for f in kozi]
+    kozi.sort(key=lambda x: os.path.getmtime(x))
+    kozi = [f[9:] for f in kozi][::-1]
     write_response(w, json.dumps({
         "result": kozi
     }))

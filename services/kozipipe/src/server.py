@@ -2,6 +2,7 @@ from System import AsyncCallback
 from System.Net import HttpListener, HttpListenerException
 
 from errors import ServerException
+from helpers import write_response
 
 class SimpleServer:
     def __init__(self, router, port):
@@ -36,5 +37,11 @@ class SimpleServer:
         url = request.RawUrl
         method = request.HttpMethod
 
-        view, params = self.router.get_view(url, method)
-        view(request, response, params)
+        response.AppendHeader('Access-Control-Allow-Origin', '*')
+        response.AppendHeader('Access-Control-Allow-Headers', 'content-type')
+        response.AppendHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+        if method != "OPTIONS":
+            view, params = self.router.get_view(url, method)
+            view(request, response, params)
+        else:
+            write_response(response, "")
