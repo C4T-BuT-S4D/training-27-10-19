@@ -1,5 +1,6 @@
 from hashlib import sha512
 from checklib import *
+from time import sleep
 import secrets
 import requests
 import json
@@ -8,8 +9,9 @@ PORT = 9999
 
 def hchecksum(text):
     h = text.encode()
-    for i in range(25000):
+    for i in range(1000):
         h = sha512(h).hexdigest().encode()
+    sleep(1)
     return h.decode()
 
 class CheckMachine:

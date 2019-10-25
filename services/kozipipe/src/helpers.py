@@ -20,7 +20,7 @@ def get_body(r):
 
 def hchecksum(text):
     h = text
-    for i in range(25000):
+    for i in range(1000):
         h = sha512(h).hexdigest()
     return h
 
