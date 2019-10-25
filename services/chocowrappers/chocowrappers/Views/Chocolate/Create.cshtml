@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Create chocolate";
+}
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <form class="border border-light p-5" method="post" action="/Chocolate/CreatePost">
+                <div class="text-center">
+                    <p class="h4 mb-4">Add your chocolate!</p>
+                </div>
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" class="form-control" id="username" name="name" placeholder="Enter chocolate name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" aria-describedby="descriptionHelp" placeholder="Description">
+                    <small id="descriptionHelp" class="form-text text-muted">Will be shown to you and your friends only</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

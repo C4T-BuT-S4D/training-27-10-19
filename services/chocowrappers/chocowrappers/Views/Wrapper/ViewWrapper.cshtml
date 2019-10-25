@@ -1,0 +1,21 @@
+@model Wrapper
+
+@{
+    ViewData["Title"] = "View wrapper";
+}
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+    </tr>
+</table>

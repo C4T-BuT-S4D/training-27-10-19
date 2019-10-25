@@ -308,3 +308,10 @@ dmypy.json
 # Android studio 3.1+ serialized cache file
 
 # End of https://www.gitignore.io/api/rider,python,pycharm,jetbrains,freepascal
+
+.idea
+deploy
+choco.db
+obj
+bin
+.DS_Store

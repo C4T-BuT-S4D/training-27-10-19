@@ -1,0 +1,109 @@
+@model User
+
+@{
+    ViewData["Title"] = "Me";
+}
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <p class="h5">
+                Hi,
+                @Model.Name
+                !
+            </p>
+            @if (Model.Chocolates != null)
+            {
+                <p>Here're your chocolates:</p>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.Chocolates)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @Html.ActionLink("View", "ViewChocolate", "Chocolate", new {id = item.Id})
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            <a href="/Chocolate/Create">
+                <button class="btn-primary">Add a chocolate</button>
+            </a>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col justify-content-center">
+            @if (Model.FriendsTo != null)
+            {
+                <p>Here're your friends:</p>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.FriendsTo)
+                    {
+                        <tr>
+                            <td>
+                                @item.UserTo.Id
+                            </td>
+                            <td>
+                                @item.UserTo.Name
+                            </td>
+                            <td>
+                                @Html.ActionLink("View", "ViewUser", "User", new {id = item.ToId})
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col justify-content-center">
+            @if (Model.WrapperCollection != null)
+            {
+                <p>Here's your wrapper collection:</p>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.WrapperCollection)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @Html.ActionLink("View", "ViewWrapper", "Wrapper", new {id = item.Id})
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            <a href="/Wrapper/Create">
+                <button class="btn-primary">Add a wrapper</button>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@model Chocolate
+
+@{
+    ViewData["Title"] = "View chocolate";
+}
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Description)
+        </td>
+    </tr>
+</table>
