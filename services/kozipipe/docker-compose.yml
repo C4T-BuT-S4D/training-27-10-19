@@ -3,9 +3,15 @@ version: '2.2'
 services:
   kozipipe:
     build: .
-    ports:
-      - "9999:5000"
-    pids_limit: 50
     volumes:
       - "./db:/db"
     restart: on-failure
+
+  nginx:
+    build: nginx
+    ports:
+      - "9999:80"
+    volumes:
+      - "./public:/public"
+    restart: on-failure
+    depends_on: [kozipipe]
