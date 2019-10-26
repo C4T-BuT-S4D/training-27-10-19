@@ -1,0 +1,11 @@
+version: '2.2'
+
+services:
+  icecreams:
+    build: .
+    ports:
+      - "5555:5555"
+    volumes:
+      - "./data:/app/data"
+    restart: on-failure
+
