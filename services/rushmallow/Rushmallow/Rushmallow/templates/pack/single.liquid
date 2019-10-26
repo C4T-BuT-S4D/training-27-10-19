@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rushmallow!</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div class="block">
+        <div class="header">
+            <a href="/" class="link"><p class="title">R U S H M A L L O W</p></a>
+        </div>
+        <div class="content">
+        {% if model %}
+            <p>Marshmallows pack info:</p>
+            <label>Guid: <input type="text" class="item" disabled value="{{ model.Guid | escape }}"></label><br>
+            <label>Name: <input type="text" class="item" disabled value="{{ model.Name | escape }}"></label><br>
+            <label>Flavour: <input type="text" class="item" disabled value="We forgot the flavour :("></label><br>
+            <p>Marshmallows: </p>
+            <ul>
+            {% for guid in model.Marshmallows %}
+                <li><a class="link" href="/marshmallows/{{ guid }}">{{ guid | escape}}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Pack not found.</p>
+        {% endif %}
+        </div>
+    </div>
+  </body>
+</html>
