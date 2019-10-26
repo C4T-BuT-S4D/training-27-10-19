@@ -16,13 +16,18 @@ let ShowAll : WebPart =
     
     
 let Show (guid: string) : WebPart = 
-    page "marshmallow/single.liquid" <| FindSingleMarshmallow guid
+    let marshmallow = FindSingleMarshmallow guid
+    if isNull <| box marshmallow || marshmallow.IsPrivate then
+        page "marshmallow/private.liquid" marshmallow
+    else
+        page "marshmallow/single.liquid" marshmallow 
 
 
 let Prove (guid: string) (request: ProveMarshmallowRequest) : ProveMarshmallowResponse = 
     let error = {
         Success = false
         Error = "Please, use all fields!"
+        Filling = null
     }
     if isNull request.Filling then error
     else
@@ -31,11 +36,13 @@ let Prove (guid: string) (request: ProveMarshmallowRequest) : ProveMarshmallowRe
             {
                 Success = true
                 Error = null
+                Filling = marshmallow.Filling
             } 
         else 
             {
                 Success = false
-                Error = "Incorrect password."
+                Error = "Incorrect filling."
+                Filling = null
             }
 
 

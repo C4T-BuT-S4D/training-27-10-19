@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rushmallow!</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div class="block">
+        <div class="header">
+            <a href="/" class="link"><p class="title">R U S H M A L L O W</p></a>
+        </div>
+        <div class="content">
+        {% if model %}
+            <p>Marshmallow info:</p>
+            <label>Guid: <input type="text" class="item" disabled value="{{ model.Guid | escape }}"></label><br>
+            <label>Sugar: <input type="text" class="item" disabled value="{{ model.Sugar | escape }}"></label><br>
+            <form class="menu">
+                <p>Marshmallow is private! Prove that you know its filling: <p>
+                <label>Filling: <input type="text" class="item" name="filling" placeholder="pineapple"></label><br>
+                <input type="button" class="send" value="Prove" onclick="proveFilling()">
+            </form>
+        {% else %}
+            <p>Marshmallow not found.</p>
+        {% endif %}
+        </div>
+    </div>
+    <script type="text/javascript" src="/static/js/marshmallow.js"></script>
+  </body>
+</html>

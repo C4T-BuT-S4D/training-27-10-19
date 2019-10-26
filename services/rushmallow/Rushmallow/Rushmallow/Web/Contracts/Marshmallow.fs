@@ -43,4 +43,7 @@ type ProveMarshmallowResponse = {
 
     [<field: DataMember(Name = "error")>]
     Error: string
+
+    [<field: DataMember(Name = "filling")>]
+    Filling: string
 }
