@@ -6,7 +6,7 @@ open Rushmallow.Model.Types
 
 
 [<Literal>]
-let private ConnectionString = "mongodb://127.0.0.1:27017"
+let private ConnectionString = "mongodb://mongodb:27017"
 
 [<Literal>]
 let private DatabaseName = "rushmallow"

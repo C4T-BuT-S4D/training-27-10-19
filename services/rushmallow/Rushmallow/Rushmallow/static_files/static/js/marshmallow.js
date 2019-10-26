@@ -16,10 +16,13 @@ function sendMarshmallow() {
     
     var response = JSON.parse(xhr.responseText);
     
-    if (!response.success)
+    if (!response.success) {
         alert(response.error);
-    else
-        alert("Success!");
+        return;
+    }
+    
+    alert("Success!");
+    window.location.href = "/marshmallows/" + response.guid;
 }
 
 function proveFilling() {

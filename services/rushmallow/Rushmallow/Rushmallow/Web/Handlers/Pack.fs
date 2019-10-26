@@ -37,8 +37,7 @@ let AddNew (request: CreatePackRequest) : CreatePackResponse =
         let secrets = ExposeSecret request.Flavour
         let guids = secrets
                     |> Seq.skip 1
-                    |> Seq.map ((ValueSome >> string) >> 
-                                (shift InsertSingleMarshmallow DefaultFilling false))
+                    |> Seq.map (string >> (shift InsertSingleMarshmallow DefaultFilling false))
                     |> Seq.toList
         {
             Success = true

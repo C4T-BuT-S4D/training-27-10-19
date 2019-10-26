@@ -7,7 +7,7 @@ type System.String with
             match idx with
             | 0 -> cnt
             | _ -> equal 
-                    (cnt + (Seq.take idx y 
+                    (cnt + (Seq.take (min idx y.Length) y 
                             |> (Seq.filter ((=) x.[idx - 1]) 
                                 >> Seq.distinct 
                                 >> Seq.length)))

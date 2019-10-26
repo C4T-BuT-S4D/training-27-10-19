@@ -1,0 +1,16 @@
+version: '2.3'
+
+services:
+  rushmallow:
+    build: .
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - 17171:8080
+  
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongo:/data/db

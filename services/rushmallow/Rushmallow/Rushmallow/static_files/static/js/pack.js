@@ -14,8 +14,11 @@ function sendPack() {
     
     var response = JSON.parse(xhr.responseText);
     
-    if (!response.success)
+    if (!response.success) {
         alert(response.error);
-    else    
-        prompt("Success! Also take some sugar:", response.sugar);
+        return;
+    }
+    
+    prompt("Success! Also take some sugar:", response.sugar);
+    window.location.href = "/packs/" + response.guid;
 }
