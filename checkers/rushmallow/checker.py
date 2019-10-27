@@ -231,6 +231,7 @@ def check(host):
     check_marshmallow(False)
 
     check_pack()
+    cquit(Status.OK)
 
 
 if __name__ == '__main__':
@@ -249,6 +250,8 @@ if __name__ == '__main__':
         else:
             cquit(Status.ERROR, 'System error', 'Unknown action: ' + action)
 
+        cquit(Status.ERROR, 'System error', f'Action {action} did not cquit')
+        
     except requests.exceptions.ConnectionError:
         cquit(Status.DOWN, 'Connection error')
     except SystemError as e:
