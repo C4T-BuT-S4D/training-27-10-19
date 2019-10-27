@@ -54,9 +54,9 @@ def recover_secret(shares, prime):
     return _lagrange_interpolate(0, x_s, y_s, prime)
 
 
-def get_packs_list(limit):
+def get_packs_list():
     html = requests.get(URL + 'packs').text
-    return re.findall('/packs/(.*?)">', html)[:limit]
+    return re.findall('/packs/(.*?)">', html)
     
 
 def get_marshmallows_list(guid):
@@ -71,8 +71,8 @@ def get_number(guid):
 
 if __name__ == '__main__':
     prime = 12058950698856173324983236458418086340362644737326952033848207975666636738909947835100603153200557571796444486564391552670171783376177474858071463819335779
-    for pack_guid in get_packs_list(10):
+    for pack_guid in get_packs_list():
         numbers = []
-        for marshmallow_guid in get_marshmallows_list(pack_guid):
-            numbers.append((len(numbers) + 2, get_number(marshmallow_guid)))
+        for i, marshmallow_guid in enumerate(get_marshmallows_list(pack_guid)):
+            numbers.append((i + 2, get_number(marshmallow_guid)))
         print(recover_secret(numbers, prime).to_bytes(32, 'little'))
