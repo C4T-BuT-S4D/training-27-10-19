@@ -8,7 +8,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import App from "./App.vue";
 
-axios.defaults.baseURL = "http://127.0.0.1:9999/api";
+axios.defaults.baseURL = window.location.origin + "/api";
 
 Vue.prototype.$http = axios;
 Vue.prototype._ = lodash;
