@@ -11,7 +11,6 @@ def hchecksum(text):
     h = text.encode()
     for i in range(1000):
         h = sha512(h).hexdigest().encode()
-    sleep(1)
     return h.decode()
 
 class CheckMachine:
