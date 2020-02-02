@@ -1,35 +1,36 @@
-# Attack-Defence тренировка от C4T BuT S4D
+# Attack-Defence training by C4T BuT S4D
 
-Исходные коды сервисов, чекеры и сплоиты с тренировки 27 октября 2019.
-
-
-## Результаты
-
-![Топ скорборда](scoreboard/top.png)
-
-[Полный финальный скорборд](scoreboard/full.png)
+Sources of services, checkers and sploits from 27th October 2019 training.
 
 
-## Сервисы
+## Results
 
-| Сервис | Язык | Чекер | Сплоиты | Автор |
+![Top](scoreboard/top.png)
+
+[Full scoreboard](scoreboard/full.png)
+
+
+## Services
+
+| Service | Lang | Checker | Sploit | Author |
 |--------|------|-------|---------|-------|
-| **[chocowrappers](services/chocowrappers/)** | C# | [Чекер](checkers/chocowrappers/) | [Сплоиты](sploits/chocowrappers/) | [@pomo_mondreganto](https://github.com/pomo-mondreganto) |
-| **[icecreams](services/icecreams/)** | PascalABC | [Чекер](checkers/icecreams/) | [Сплоиты](sploits/icecreams/) | [@jnovikov](https://github.com/jnovikov) |
-| **[rushmallow](services/rushmallow/)** | F# | [Чекер](checkers/rushmallow/) | [Сплоиты](sploits/rushmallow/) | [@keltecc](https://github.com/keltecc) |
-| **[kozipipe](services/kozipipe/)** | IronPython | [Чекер](checkers/kozipipe/) | [Сплоиты](sploits/kozipipe/) | [@kekov](https://github.com/xmikasax) |
+| **[chocowrappers](services/chocowrappers/)** | C# | [Checker](checkers/chocowrappers/) | [Sploits](sploits/chocowrappers/) | [@pomo_mondreganto](https://github.com/pomo-mondreganto) |
+| **[icecreams](services/icecreams/)** | PascalABC | [Checker](checkers/icecreams/) | [Sploits](sploits/icecreams/) | [@jnovikov](https://github.com/jnovikov) |
+| **[rushmallow](services/rushmallow/)** | F# | [Checker](checkers/rushmallow/) | [Sploits](sploits/rushmallow/) | [@keltecc](https://github.com/keltecc) |
+| **[kozipipe](services/kozipipe/)** | IronPython | [Checker](checkers/kozipipe/) | [Sploits](sploits/kozipipe/) | [@kekov](https://github.com/xmikasax) |
 
 
-## Образ
+## Image
 
 - mono in Docker
 
 
-## Инфраструктура
+## Infrastructure
 
 - DevOps: author [@pomo-mondreganto](https://github.com/pomo-mondreganto), performer [@xmikasax](https://github.com/xmikasax).
-- Проверяющая система: [ForcAD](https://github.com/pomo-mondreganto/ForcAD)
+- Checksystem: [ForcAD](https://github.com/pomo-mondreganto/ForcAD)
 
 
-## Разбор
-Приближается...
+## Writeups
+
+Coming...
