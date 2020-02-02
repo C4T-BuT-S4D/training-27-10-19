@@ -12,7 +12,7 @@ Sources of services, checkers and sploits from 27th October 2019 training.
 
 ## Services
 
-| Service | Lang | Checker | Sploit | Author |
+| Service | Lang | Checker | Sploits | Author |
 |--------|------|-------|---------|-------|
 | **[chocowrappers](services/chocowrappers/)** | C# | [Checker](checkers/chocowrappers/) | [Sploits](sploits/chocowrappers/) | [@pomo_mondreganto](https://github.com/pomo-mondreganto) |
 | **[icecreams](services/icecreams/)** | PascalABC | [Checker](checkers/icecreams/) | [Sploits](sploits/icecreams/) | [@jnovikov](https://github.com/jnovikov) |
